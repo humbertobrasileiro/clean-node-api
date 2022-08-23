@@ -1,8 +1,8 @@
-import { SignUpController } from '../../../../src/presentation/controllers/login/signup/signup-controller'
-import { EmailInUseError, MissingParamError, ServerError } from '../../../../src/presentation/errors'
-import { AccountModel, AddAccount, AddAccountModel, Validation, Authentication, AuthenticationModel } from '../../../../src/presentation/controllers/login/signup/signup-controller-protocols'
-import { HttpRequest } from '../../../../src/presentation/protocols'
-import { ok, serverError, badRequest, forbidden } from '../../../../src/presentation/helpers/http/http-helper'
+import { SignUpController } from '../../../../../src/presentation/controllers/login/signup/signup-controller'
+import { EmailInUseError, MissingParamError, ServerError } from '../../../../../src/presentation/errors'
+import { AccountModel, AddAccount, AddAccountModel, Validation, Authentication, AuthenticationModel } from '../../../../../src/presentation/controllers/login/signup/signup-controller-protocols'
+import { HttpRequest } from '../../../../../src/presentation/protocols'
+import { ok, serverError, badRequest, forbidden } from '../../../../../src/presentation/helpers/http/http-helper'
 
 const makeAddAccount = (): AddAccount => {
   class AddAccountStub implements AddAccount {
