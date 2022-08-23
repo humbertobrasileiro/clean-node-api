@@ -1,6 +1,6 @@
-import { SignUpController } from '../../../../src/presentation/controllers/signup/signup-controller'
+import { SignUpController } from '../../../../src/presentation/controllers/login/signup/signup-controller'
 import { EmailInUseError, MissingParamError, ServerError } from '../../../../src/presentation/errors'
-import { AccountModel, AddAccount, AddAccountModel, Validation, Authentication, AuthenticationModel } from '../../../../src/presentation/controllers/signup/signup-controller-protocols'
+import { AccountModel, AddAccount, AddAccountModel, Validation, Authentication, AuthenticationModel } from '../../../../src/presentation/controllers/login/signup/signup-controller-protocols'
 import { HttpRequest } from '../../../../src/presentation/protocols'
 import { ok, serverError, badRequest, forbidden } from '../../../../src/presentation/helpers/http/http-helper'
 
