@@ -3,16 +3,10 @@ import { Collection, MongoClient } from 'mongodb'
 export const MongoHelper = {
   client: null as MongoClient,
   uri: null as string,
-  isConnected: null as boolean,
-  
+
   async connect (uri: string): Promise<void> {
     this.uri = uri
-    try {
-      this.client = await MongoClient.connect(uri)
-      this.isConnected = true
-    } catch {
-      this.isConnected = false
-    }
+    this.client = await MongoClient.connect(uri)
   },
 
   async disconnect (): Promise<void> {
@@ -22,7 +16,7 @@ export const MongoHelper = {
   },
 
   async getCollection (name: string): Promise<Collection> {
-    if (!this.isConnected) {
+    if (!this.client) {
       await this.connect(this.uri)
     }
     return this.client.db().collection(name)

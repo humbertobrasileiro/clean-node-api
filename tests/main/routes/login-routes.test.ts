@@ -28,12 +28,21 @@ describe('Login Routes', () => {
       await request(app)
         .post('/api/signup')
         .send({
-          name: 'Humberto',
+          name: 'Carlos Humberto Brasileiro Toscano',
           email: 'humbertobtoscano@gmail.com',
-          password: '123456',
-          passwordConfirmation: '123456'
+          password: '12345678',
+          passwordConfirmation: '12345678'
         })
         .expect(200)
+      await request(app)
+        .post('/api/signup')
+        .send({
+          name: 'Carlos Humberto Brasileiro Toscano',
+          email: 'humbertobtoscano@gmail.com',
+          password: '12345678',
+          passwordConfirmation: '12345678'
+        })
+        .expect(403)
     })
 
   })
