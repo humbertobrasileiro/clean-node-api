@@ -3,3 +3,6 @@ dist
 coverage
 .history
 .lh
+data
+!src/data
+!tests/data
