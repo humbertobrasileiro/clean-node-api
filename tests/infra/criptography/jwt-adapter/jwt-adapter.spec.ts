@@ -1,5 +1,6 @@
 import jwt from 'jsonwebtoken'
 import { JwtAdapter } from '../../../../src/infra/criptography/jwt-adapter/jwt-adapter'
+
 interface SutTypes {
   sut: JwtAdapter
 }
@@ -52,8 +53,14 @@ describe('Jwt Adapter', () => {
     test('Should call verify with correct values', async () => {
       const { sut } = makeSut('secret')
       const verifySpy = jest.spyOn(jwt, 'verify')
-      sut.decrypt('any_token')
+      await sut.decrypt('any_token')
       expect(verifySpy).toHaveBeenCalledWith('any_token', 'secret')
+    })
+  
+    test('Should return a value on verify success', async () => {
+      const { sut } = makeSut('secret')
+      const value = await sut.decrypt('any_token')
+      expect(value).toBe('any_value')
     })
 
   })
