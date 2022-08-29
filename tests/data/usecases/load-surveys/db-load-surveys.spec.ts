@@ -53,6 +53,15 @@ describe('DbLoadSurveys', () => {
     const loadAllSpy = jest.spyOn(loadSurveysRepositoryStub, 'loadAll')
     await sut.load()
     expect(loadAllSpy).toHaveBeenCalled()
+
+  })
+
+  test('Should return a list of Surveys on success', async () => {
+
+    const { sut } = makeSut()
+    const surveys = await sut.load()
+    expect(surveys).toEqual(makeFakeSurveys())
+    
   })
 
 })
