@@ -11,6 +11,7 @@
   ],
   "rules": {
     "@typescript-eslint/strict-boolean-expressions": "off",
+    "@typescript-eslint/consistent-type-definitions": "off",
     "@typescript-eslint/prefer-nullish-coalescing": "error",
     "@typescript-eslint/no-misused-promises": [
       "error",
