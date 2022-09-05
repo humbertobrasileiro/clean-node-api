@@ -1,5 +1,6 @@
 import { SurveyModel, SurveyResultModel } from '@/domain/models/survey'
 import { AddSurveyParams } from '@/domain/usecases/add-survey'
+import { HttpRequest } from '@/presentation/protocols'
 import { SaveSurveyResultModel } from '../usecases/save-survey-result'
 
 export const mockSurveys = (): SurveyModel[] => {
@@ -61,4 +62,13 @@ export const mockSurveyResultData = (): SaveSurveyResultModel => {
     date: new Date()
   }
 }
+
+export const mockRequest = (): HttpRequest => {
+  return {
+    params: {
+      surveyId: 'any_survey_id'
+    }
+  }
+}
+
 

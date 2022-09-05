@@ -6,6 +6,7 @@ import { AddSurveyParams, AddSurveyRepository } from '../usecases/add-survey/db-
 import { LoadSurveyByIdRepository } from '../protocols/db/survey/load-survey-by-id-repository'
 import { SaveSurveyResultModel } from '@/domain/usecases/save-survey-result'
 import { SaveSurveyResultRepository } from '../protocols/db/survey/save-survey-result-repository'
+import { LoadSurveyById } from '../usecases/load-survey-by-id/db-load-survey-by-id-protocols'
 
 export const mockAddSurveyRepository = (): AddSurveyRepository => {
   class AddSurveyRepositoryStub implements AddSurveyRepository {
@@ -32,6 +33,15 @@ export const mockLoadSurveyByIdRepository = (): LoadSurveyByIdRepository => {
     }
   }
   return new LoadSurveyByIdRepositoryStub()
+}
+
+export const mockLoadSurveyById = (): LoadSurveyById => {
+  class LoadSurveyByIdStub implements LoadSurveyById {
+    async loadById (id: string): Promise<SurveyModel> {
+      return new Promise(resolve => resolve(mockSurveyModel()))
+    }
+  }
+  return new LoadSurveyByIdStub()
 }
 
 export const mockLoadSurveys = (): LoadSurveys => {
