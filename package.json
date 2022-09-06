@@ -5,7 +5,7 @@
   "main": "index.js",
   "keywords": [],
   "author": "Carlos Humberto",
-  "license": "ISC",
+  "license": "GPL-3.0-or-later",
   "scripts": {
     "start": "node dist/main/server.js",
     "build": "rimraf dist && tsc -p tsconfig-build.json",
